@@ -14,8 +14,16 @@ export const InputField: FC<InputFieldProps> = ({
 }) => {
   return (
     <>
-      <input type="text" placeholder="Seconds" value={value} onChange={onChange}/>
-      <button name="start" onClick={() => onClick(value)}>Start</button>
+      <input 
+        type="text" 
+        placeholder="Seconds" 
+        value={value} 
+        onChange={onChange}
+      />
+      <button 
+        name="start" 
+        onClick={() => onClick(value)}
+      >Start</button>
     </>
   )
 }
