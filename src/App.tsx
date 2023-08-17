@@ -11,7 +11,10 @@ function App() {
   const { secondsLeft, startTimer } = useTimer();
 
   const [ timerValue, setTimerValue ] = useState('');
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => setTimerValue(e.target.value);
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const newValue = e.target.value.replace(/[^\d]/g, '');
+    setTimerValue(newValue);
+  }
 
   return (
     <div className="App">
