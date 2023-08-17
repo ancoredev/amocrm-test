@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { timeFormater } from '../utils'
+import { formatTimer } from '../utils'
 
 
 interface TimerProps {
@@ -8,12 +8,10 @@ interface TimerProps {
 }
 
 export const Timer: FC<TimerProps> = ({value}) => {
-
-
   return (
     <div className="timer">
       { 
-        value === 0 ? "hh:mm:ss" : timeFormater(value)
+        value === 0 ? "hh:mm:ss" : formatTimer(value)
       }
     </div>
   )

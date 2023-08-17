@@ -1,5 +1,5 @@
-export type TUseTimer = (initialValue: number) => {
+export type TUseTimer = () => {
   secondsLeft: number,
   isRunning: boolean,
-  startTimer: () => void
+  startTimer: (initialValue: number | string) => void
 }

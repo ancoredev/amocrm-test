@@ -8,11 +8,10 @@ import { useTimer } from './hooks/useTimer';
 
 
 function App() {
-  const [ timerValue, setTimerValue ] = useState('0');
-  const { secondsLeft, isRunning, startTimer } = useTimer(parseInt(timerValue));
-  
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => setTimerValue(e.target.value);
+  const { secondsLeft, startTimer } = useTimer();
 
+  const [ timerValue, setTimerValue ] = useState('');
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => setTimerValue(e.target.value);
 
   return (
     <div className="App">

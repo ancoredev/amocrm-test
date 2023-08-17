@@ -4,7 +4,7 @@ import { FC } from "react"
 interface InputFieldProps {
   value: string,
   onChange: React.ChangeEventHandler<HTMLInputElement>,
-  onClick: () => void
+  onClick: (initialValue: number | string) => void
 }
 
 export const InputField: FC<InputFieldProps> = ({
@@ -15,7 +15,7 @@ export const InputField: FC<InputFieldProps> = ({
   return (
     <>
       <input type="text" placeholder="Seconds" value={value} onChange={onChange}/>
-      <button name="start" onClick={onClick}>Start</button>
+      <button name="start" onClick={() => onClick(value)}>Start</button>
     </>
   )
 }

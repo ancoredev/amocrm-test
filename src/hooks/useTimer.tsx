@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react'
 import { TUseTimer } from '../types'
 
 
-export const useTimer: TUseTimer = (initialValue) => {
+export const useTimer: TUseTimer = () => {
   const [ isRunning, setRunning ] = useState(false);
   const [ secondsLeft, setSecondsLeft ] = useState(0);
 
-  const startTimer = () => {
+  const startTimer: (initialValue: number | string) => void = (initialValue) => {
     setRunning(true);
-    setSecondsLeft(initialValue);
+    typeof initialValue === 'number' 
+      ? setSecondsLeft(initialValue)
+      : setSecondsLeft(parseInt(initialValue))
   }
   const stopTimer = () => setRunning(false);
 
